@@ -5,7 +5,6 @@ import io.kodlama.Northwind.business.abstracts.UserService;
 import io.kodlama.Northwind.core.entities.User;
 import io.kodlama.Northwind.core.utilities.results.DataResult;
 import io.kodlama.Northwind.core.utilities.results.ErrorDataResult;
-import io.kodlama.Northwind.core.utilities.results.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +33,6 @@ public class UsersController {
     public DataResult<User> findByEmail(@RequestParam String email){
         return this.userService.findByEmail(email);
     }
-
 
     @PostMapping("add")
     public ResponseEntity<?> add(@Valid @RequestBody User user){
