@@ -13,12 +13,14 @@ import java.util.List;
 @RequestMapping("/api/products/")
 public class ProductsController {
 
+    private ProductService productService;
+
     @Autowired
     public ProductsController(ProductService productService) {
         this.productService = productService;
     }
 
-    private ProductService productService;
+
 
     @GetMapping("getall")
     public DataResult<List<Product>> getAll(){
