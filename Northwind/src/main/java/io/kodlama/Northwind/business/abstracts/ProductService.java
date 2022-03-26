@@ -3,6 +3,7 @@ package io.kodlama.Northwind.business.abstracts;
 import io.kodlama.Northwind.core.utilities.results.DataResult;
 import io.kodlama.Northwind.core.utilities.results.Result;
 import io.kodlama.Northwind.entities.concretes.Product;
+import io.kodlama.Northwind.entities.dtos.ProductWithCategoryDto;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -28,4 +29,8 @@ public interface ProductService {
     DataResult<List<Product>> getByProductNameStartsWith(String productName);
 
     DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId);
+
+    DataResult<List<ProductWithCategoryDto>> getByDto();
+
+
 }
